@@ -1,5 +1,7 @@
-from flask import Flask, render_template, request, redirect  # added request
+from flask import Flask, render_template, request, redirect, session  # added request
 app = Flask(__name__)
+# set a secret key for security purposes
+app.secret_key = 'keep it secret, keep it safe'
 
 
 @app.route('/')
@@ -11,11 +13,14 @@ def index():
 def create_user():
     print("Got Post Info")
     print(request.form)
-    name_from_form = request.form['name']
-    email_from_form = request.form['email']
-    language_from_form = request.form['language']
-    comment_from_form = request.form['']
-    return render_template("response.html", name_on_template=name_from_form, email_on_template=email_from_form, language_on_template=language_from_form)
+    session['name'] = request.form['name']
+    session['email'] = request.form['email']
+    session['language'] = request.form['language']
+    return redirect('/show')
+
+@app.route('/show')
+def show_user():
+    return render_template("response.html")
 
 
 if __name__ == "__main__":
