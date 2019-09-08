@@ -1,0 +1,32 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    line-height: 0px;
+    box-sizing: border-box;
+}
+div{
+    display: inline-block;
+}
+.row{
+    display: block;
+}
+.box1{
+    background-color:red;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    line-height: 0px;
+    margin-right: -5px;
+
+}
+.box2{
+    background-color: black;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    line-height: 0px;
+    margin-right: -5px;
+}
+.lineBreake{
+    display: block;
+}
