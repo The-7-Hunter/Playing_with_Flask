@@ -10,6 +10,13 @@
 
 <body>
     <h1>Index Page</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <h1>{{message}}</h1>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
     <h3>Create a User</h3>
     <form action='/users' method='post'>
         Name: <input type='text' name='name'>
