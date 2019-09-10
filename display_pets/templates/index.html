@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>First Flask with my SQL</title>
+</head>
+
+<body>
+    <h1>Lets display all pets in our Database</h1>
+    <h1>--------------------</h1>
+    {% for pet in all_pets %}
+        <p>Name: {{pet["name"]}}</p>
+        <p> Type: {{pet["type"]}}</p>
+        <p>Uploaded at: {{pet["uploaded_at"]}}</p>
+    <hr>
+    {% endfor %}
+    <h1>Add a Pet</h1>
+        <form action="/create_pet" method="POST">
+            <p> Name: <input type="text" name="name"></p>
+            <p> type: <input type="text" name="type"></p>
+            <input type="submit" value="Add pet">
+        </form>
+</body>
+
+</html>
